@@ -1,19 +1,71 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>testing deep link</title>
-<style>
-* { font-family: verdana; font-size: 10pt; color: gray; }
-b { font-weight: bold; }
-table { border: 1px solid gray; }
-td { text-align: center; padding: 25;}
-</style>
+    <title>Testing Deep Link - Register</title>
+    <style>
+        * {
+            font-family: Verdana, sans-serif;
+            font-size: 10pt;
+            color: gray;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            border: 1px solid gray;
+            padding: 25px;
+        }
+        b {
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 12pt;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-<center>
-<br><br><br><br>
-<table>
-<tr><td>This is a placeholder for the subdomain <b><a href="http://abbyhilman.github.io/deeplinktest/" target="_system">INI LINK</a></b></td></tr>
-</table>
-</center>
+    <div class="container">
+        <p>Open the <b>LJT Unitlak</b> app to register</p>
+        <button onclick="openDeepLink()">Open App</button>
+    </div>
+
+    <script>
+        function openDeepLink() {
+            // Deep link to open the RegisterView in the LJT Unitlak app
+            const deepLink = 'myapp://register';
+            // Fallback URL if the app is not installed
+            const fallbackUrl = 'https://abbyhilman.github.io/deeplinktest/';
+
+            // Attempt to open the deep link
+            window.location.href = deepLink;
+
+            // Redirect to fallback URL after 2 seconds if the app doesn't open
+            setTimeout(() => {
+                if (document.visibilityState === 'visible') {
+                    window.location.href = fallbackUrl;
+                }
+            }, 2000);
+        }
+
+        // Auto-trigger deep link on page load
+        window.onload = () => {
+            openDeepLink();
+        };
+    </script>
 </body>
 </html>
