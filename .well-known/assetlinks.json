@@ -2,7 +2,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.bidig.yadara_apps",
+      "package_name": "com.ljt.unitlak",
       "sha256_cert_fingerprints": ["AE:54:70:95:40:61:A9:5A:06:2E:93:5E:9D:16:A5:A3:87:79:21:98:2B:8A:53:46:E6:6E:CE:87:18:00:8D:A1"]
     }
 }]
